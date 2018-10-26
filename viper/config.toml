@@ -1,0 +1,41 @@
+# 服务名称
+service_name = "market-admin"
+# 模式，可选值：prod, dev。生产环境请设置为prod
+mode = "dev"
+address = "127.0.0.1:8000"
+#前缀
+app_path_prefix = "v1"
+# 微信公众号临时目录
+local_pic_dir = "/tmp/img"
+# 外部缓存设置，都是redis的配置
+[cache]
+    [cache.page]
+        server = "127.0.0.1:6379"
+        password = ""
+        database = 2
+    [cache.model]
+        server = "127.0.0.1:6379"
+        password = ""
+        database = 1
+        max_idle = 100
+        max_active = 500
+        idle_timeout = 120
+        redis_key_lifespan = 300
+        cache_purge_interval = 300
+        lifespan = 40
+
+
+[log]
+    # 日志输出目标，支持: file, console。如果包括file，需要指定log_dir
+    output = "console"
+    log_dir = "logs"
+
+[database]
+    # 使用mysql做为我们的数据库
+    conn_str = "root:123456@tcp(127.0.0.1:3306)/hetao1?charset=utf8mb4&parseTime=true&loc=Local"
+    max_idle_conn = 30
+    max_open_conn = 50
+
+
+
+

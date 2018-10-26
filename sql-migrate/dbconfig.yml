@@ -1,0 +1,9 @@
+development:
+    dialect: mysql
+    datasource: root:123456@tcp(127.0.0.1:3306)/goods?parseTime=true
+    dir: /Users/andy/sql-migrate
+production:
+    dialect: mysql
+    datasource: root:123456@tcp(127.0.0.1:3306)/goods?parseTime=true
+    dir: /Users/andy/sql-migrate
+
